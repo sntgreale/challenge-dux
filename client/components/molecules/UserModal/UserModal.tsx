@@ -10,6 +10,9 @@ import Dropdown from "@/components/atoms/Dropdown/Dropdown";
 import { UserFormProps } from "./UserModal.types";
 import { UserStatus } from "@/types/User";
 
+// Constants
+import { availableSectors, availableStates } from "@/constants/user";
+
 const UserFormModal = ({
   visible,
   onClose,
@@ -23,19 +26,6 @@ const UserFormModal = ({
 
   const [hasError, setHasError] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
-
-  const availableStates = [
-    {
-      label: "ACTIVO",
-      value: "ACTIVO",
-    },
-    {
-      label: "INACTIVO",
-      value: "INACTIVO",
-    },
-  ];
-
-  const availableSectors = [{ label: "4000", value: 4000 }];
 
   useEffect(() => {
     if (user) {
